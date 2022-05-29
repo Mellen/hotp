@@ -4,8 +4,8 @@ import hmac
 import sys
 from math import ceil
 
-def hotp(secret, unixtime, digits):
-    hs = hmac.new(secret, unixtime.to_bytes(8, byteorder='big'), 'sha1')
+def hotp(secret, counter, digits):
+    hs = hmac.new(secret, counter.to_bytes(8, byteorder='big'), 'sha1')
     fourByteNumber = dynamicTruncation(hs.digest())
     result = fourByteNumber % (10**digits)
     return result
