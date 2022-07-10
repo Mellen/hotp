@@ -16,7 +16,7 @@ The output for this will be a 6 digit string, like `123456`.
 
 ## hotp
 
-Given a secret, and a counter, will generate a OTP that is the same for the same secret+counter pair, based on the UTC time of day. The secret is a byte array. Use like this:
+Given a secret, and a counter, and a number of digitst, will generate a OTP, with the required number of digits, that is the same for the same secret+counter pair. The secret is a byte array. Use like this:
 
 ``` python
 hotp(b'4321', 5, 6)
